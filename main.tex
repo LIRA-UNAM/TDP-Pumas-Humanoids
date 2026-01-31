@@ -1,0 +1,38 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\begin{document}
+\title{Team Pumas}
+\author{Advanced Robotics Research Laboratory (LIRA)\\
+National Autonomous University of Mexico (UNAM), Mexico City, Mexico}
+\institute{
+\email{lira@ingenieria.unam.edu}\\
+\url{https://lira.unam.mx/} 
+}
+%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+Pumas Team has participated in Robocup since 2006 in @Home League. In 2025 we had our first participation in Humanoid Kid Size League and in 2026 we will participate for the first time in the Large Robot Division. We use a Unitree G1 and a Booster T1 and we are currently developing our own platform for the Large Division using SteadyWin motors and reinforment learning for gait generation. Pumas' vision system is mainly based on neural networks and tasks are planned using simple finite state machines. 
+\end{abstract}
+%
+%
+%
+\section{Hardware description}
+Our team uses the Booster T1 and Unitree G1 as the base platforms for the Large Robot Division. Booster T1 has a height of 1.18 m, a weight of approximately 30 kg, and a total of 23 degrees of freedom distributed across the head, arms, waist, and legs. The sensing system includes an Intel RealSense which provides RGB
+images, depth information, and a 6-axis IMU, nevertheless, only the passive sensor are used. Additional sensors include joint encoders and a microphone array. Computation is provided by an NVIDIA Jetson AGX Orin with 32 GB RAM.
+
+Unitree G1 is 1.30m height and weights 35 kg. Original model has 21 DoF and does not have joints in the neck, which is why we are working on a pan-tilt unit to comply with the competition requirements. The final platform will have 23 DoF. This robot has an RGB-D camera and a 3D Livox Lidar, nevertheless, we only use the passive sensors to comply with the league restrictions. Computation if performed on an NVIDIA Jetson Orin.
+
+The platform we are developing has 23 DoF and is built with SteadyWin servomotors and aluminum links. Computation will be done using an Nvidia Jetson. 
+
+\section{Visual perception}
+Pumas' visual perception system is based on a customized YOLO model. We trained the detection of ball, robots, goals and field landmarks such as the central circle, line crosses and T-shaped lines. This landmarks are used for localization as described below. To keep ball within the field of view, we move the head using a PI control to calculate the pan-tilt angles. 
+
+\section{Localization}
+Localization is performed using field landmarks such as the central circle, corners, line crosses and T-shaped lines. A particle filter is used to estimate robot $(x,y,\theta)$ using as measurements the pan angles of the landmarks with respect to the robot. Since the field is symmetric, we assume as known initial condition the side of the field in which the robot starts playing. 
+
+\section{Task planning}
+\subsection{Pretrained movements}
+We use the predefined movements included both in Unitree G1 and Booster T1 for walking, kicking and getting up after a fall. Our planner generate movements 
+\end{document}

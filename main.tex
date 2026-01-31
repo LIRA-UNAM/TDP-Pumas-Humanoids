@@ -13,7 +13,7 @@ National Autonomous University of Mexico (UNAM), Mexico City, Mexico}
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-Pumas Team has participated in Robocup since 2006 in @Home League. In 2025 we had our first participation in Humanoid Kid Size League and in 2026 we will participate for the first time in the Large Robot Division. We use a Unitree G1 and a Booster T1 and we are currently developing our own platform for the Large Division using SteadyWin motors and reinforment learning for gait generation. Pumas' vision system is mainly based on neural networks and tasks are planned using simple finite state machines. 
+Pumas Team has participated in Robocup since 2006 in @Home League. In 2025 we had our first participation in Humanoid Kid Size League and in 2026 we will participate for the first time in the Large Robot Division. We use a Unitree G1 and a Booster T1 and we are currently developing our own platform for the Large Division using SteadyWin motors and reinforcement learning for gait generation. Pumas' vision system is mainly based on neural networks and tasks are planned using simple finite state machines. 
 \end{abstract}
 %
 %
@@ -34,7 +34,7 @@ Localization is performed using field landmarks such as the central circle, corn
 
 \section{Task planning}
 \subsection{Pretrained movements}
-We use the predefined movements included both in Unitree G1 and Booster T1 for walking, kicking and getting up after a fall. Our game planner generate movement commands considering only linear and angular speeds for the CoM. We translate these commands to the corresponding protocol for each robot. One of the main challenges was to develop a platform-independent system capable to play a match in different platforms (Unitree, Booster and ours) with minimal changes.
+We use the predefined movements included both in Unitree G1 and Booster T1 for walking, kicking and getting up after a fall. The movements for our platform will be trained using DRL. Our game planner generate movement commands considering only linear and angular speeds for the CoM. We translate these commands to the corresponding protocol for each robot. One of the main challenges was to develop a platform-independent system capable to play a match in different platforms (Unitree, Booster and ours) with minimal changes.
 
 \subsection{Game planning}
 The general strategy for playing is executed using finite state machines. Our system is platform-agnostic and the different behaviors are selected just by setting the number of player and the rol (goalkeeper or player).

@@ -34,5 +34,10 @@ Localization is performed using field landmarks such as the central circle, corn
 
 \section{Task planning}
 \subsection{Pretrained movements}
-We use the predefined movements included both in Unitree G1 and Booster T1 for walking, kicking and getting up after a fall. Our planner generate movements 
+We use the predefined movements included both in Unitree G1 and Booster T1 for walking, kicking and getting up after a fall. Our game planner generate movement commands considering only linear and angular speeds for the CoM. We translate these commands to the corresponding protocol for each robot. One of the main challenges was to develop a platform-independent system capable to play a match in different platforms (Unitree, Booster and ours) with minimal changes.
+
+\subsection{Game planning}
+The general strategy for playing is executed using finite state machines. Our system is platform-agnostic and the different behaviors are selected just by setting the number of player and the rol (goalkeeper or player).
+
+
 \end{document}
